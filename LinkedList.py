@@ -21,17 +21,39 @@ class LinkedList:
     def firstNode(self):
         self.current = self.first
 
-    def printElement(self):
+    def getNode(self):
+        return self.current
+
+    def getNext(self):
+        return self.current.next
+
+    def printList(self):
         self.firstNode()
         while (self.current != None):
             print(self.current.node)
             self.moveForward()
 
+    def printNode(self):
+        print(self.current.node)
 
-if __name__ == "__main__":
-    myList = LinkedList(1)
-    myList.addNode(2)
-    myList.addNode(3)
 
-    print("printing list")
-    myList.printElement()
+class LabeledLinkedList(LinkedList):
+
+    def __init__(self,value):
+        self.label = 0
+        self.list = LinkedList(value)
+
+    def incrementLabel(self):
+        self.label += 1
+
+    def addLabeledNode(self,value):
+        self.list.addNode(value)
+        self.incrementLabel()
+
+
+
+
+labeledlist = LabeledLinkedList("a")
+labeledlist.addLabeledNode("b")
+print(labeledlist.label)
+print(labeledlist.list.first.node)
