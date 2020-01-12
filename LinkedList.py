@@ -44,7 +44,7 @@ class LinkedList:
         self.firstNode()
         
         while (not self.isDone()):
-            print(self.current.node)
+            print(self.getNode())
             self.moveForward()
 
     # print the current node
