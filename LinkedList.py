@@ -18,8 +18,11 @@ class LinkedList:
     def moveForward(self):
         self.current = self.current.next
 
-    def printElement(self):
+    def firstNode(self):
         self.current = self.first
+
+    def printElement(self):
+        self.firstNode()
         while (self.current != None):
             print(self.current.node)
             self.moveForward()
@@ -27,13 +30,8 @@ class LinkedList:
 
 if __name__ == "__main__":
     myList = LinkedList(1)
-    print("1 added")
-
     myList.addNode(2)
-    print("2 added")
-
     myList.addNode(3)
-    print("3 added")
 
     print("printing list")
     myList.printElement()
