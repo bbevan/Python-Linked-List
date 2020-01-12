@@ -4,6 +4,9 @@ class Node:
     def __init__(self, value):
         self.node = value # the node itself
         self.next = None  # pointer to the next node
+
+    def __str__(self):
+        return "" + str(self.node)
    
 class LinkedList:
 
@@ -22,6 +25,7 @@ class LinkedList:
     def firstNode(self):
         self.current = self.first # go back to the first node
 
+    # (!) problem here
     def getNode(self):
         return self.current.node # get the value of the node
 
@@ -40,7 +44,7 @@ class LinkedList:
         self.firstNode()
         
         while (not self.isDone()):
-            print(self.getNode())
+            print(self.current.node)
             self.moveForward()
 
     # print the current node
