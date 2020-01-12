@@ -1,31 +1,21 @@
-class Node:
-    
-    def __init__(self, value):
-        self.node = value
-        self.next = None
-        self.label = label
+from LinkedList import Node, LinkedList
 
-class ConnectedPair:
+class GraphNode:
 
-    def __init__(self, Node1 , Node2):
-        self.connection = [Node(Node1[0], [1]), Node(Node2[0], Node2[1])]
-
-        if (Node1[1] != Node2[1]):
-            raise Exception("Labels are not the same. The pair is not connected.")
+    def __init__(self, node, connection):
+        self.Pair = [Node(node), connection]
 
 class Graph:
 
-    def __init__(self, *Pair):
-        self.graph = []
+    def __init__(self, initialNode, initialConnection):
+        self.graph = LinkedList(GraphNode(initialNode, initialConnection))
 
-        for p in Pair:
-            
-            self.graph.append(ConnectedPair(p[0], p[1]))
-            
-            #if (type(p) != "<class 'Pair'>"):
-                #raise Exception("Some input is not a pair. Try again.")
+    def addPoint(self, node, connection):
+        self.graph.addNode(GraphNode(node, connection))
 
-    def readGraph(self, filename):
+    def printGraph(self):
+        self.graph.printList()
 
-myGraph = Graph( [ [0,1],[1,1] ])
-myGraph = Graph( [ [0,1],[1,1] ]
+myGraph = Graph(0,1)
+myGraph.addPoint(1,1)
+myGraph.printGraph()

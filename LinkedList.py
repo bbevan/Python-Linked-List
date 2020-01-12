@@ -64,13 +64,3 @@ class LabeledLinkedList(LinkedList):
 
     def moveForward(self):
         self.currentlabel = self.current.nextlabel
-
-
-    
-
-myList = LinkedList("a")
-myList.addNode("b")
-myList.printList()
-
-myLabeled = LabeledLinkedList(1, 1)
-myLabeled.addNode(2, 2)
