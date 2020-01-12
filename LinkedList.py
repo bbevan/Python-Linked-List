@@ -22,7 +22,6 @@ class LabeledLinkedList:
 
     def firstNode(self):
         self.current = self.first
-        self.label = 0
 
     def getNode(self):
         return [self.label, self.current]
