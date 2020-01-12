@@ -1,18 +1,20 @@
 
 class Node:
     
-    def __init__(self, value):
+    def __init__(self, value, label):
         self.node = value
         self.next = None
+        self.label = label
    
-class LinkedList:
+class LabeledLinkedList:
 
-    def __init__(self,value):
-        self.first = Node(value)
+    def __init__(self,value, label):
+        self.first = Node(value, label)
         self.current = self.first
-    
-    def addNode(self, value):
-        self.current.next = Node(value)
+        
+
+    def addNode(self, value, label):
+        self.current.next = Node(value, label)
         self.moveForward()
 
     def moveForward(self):
@@ -20,9 +22,10 @@ class LinkedList:
 
     def firstNode(self):
         self.current = self.first
+        self.label = 0
 
     def getNode(self):
-        return self.current
+        return [self.label, self.current]
 
     def getNext(self):
         return self.current.next
@@ -30,30 +33,13 @@ class LinkedList:
     def printList(self):
         self.firstNode()
         while (self.current != None):
+            print(self.current.label)
             print(self.current.node)
             self.moveForward()
 
     def printNode(self):
         print(self.current.node)
 
-
-class LabeledLinkedList(LinkedList):
-
-    def __init__(self,value):
-        self.label = 0
-        self.list = LinkedList(value)
-
-    def incrementLabel(self):
-        self.label += 1
-
-    def addLabeledNode(self,value):
-        self.list.addNode(value)
-        self.incrementLabel()
-
-
-
-
-labeledlist = LabeledLinkedList("a")
-labeledlist.addLabeledNode("b")
-print(labeledlist.label)
-print(labeledlist.list.first.node)
+myList = LabeledLinkedList("a", 1)
+myList.addNode("b", 2)
+myList.printList()
