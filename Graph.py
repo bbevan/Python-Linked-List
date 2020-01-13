@@ -22,6 +22,9 @@ class Graph:
     def printGraph(self):
         self.graph.printList()
 
+    def getPoint(self):
+        return self.graph.getNode()
+
 myGraph = Graph(0,1)
 myGraph.addPoint(1,1)
 myGraph.printGraph()
