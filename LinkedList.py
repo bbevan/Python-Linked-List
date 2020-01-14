@@ -18,6 +18,10 @@ class LinkedList:
         self.current.next = Node(value)
         self.current = self.current.next
 
+    #------------------------------------
+    # Iterator
+    #------------------------------------
+    
     def __iter__(self):
         self.i = self.first
         return self
@@ -30,3 +34,26 @@ class LinkedList:
         else:
             self.i = self.first
             raise StopIteration
+
+    #----------------------------------
+    # Search and Delete Node
+    #----------------------------------
+
+    def searchList(self, key):
+
+        for x in self:
+            if (x.node == key):
+                return x
+
+    def searchNext(self, key):
+
+        for x in self:
+            if(x.node == key):
+                return x.next
+
+    def deleteNode(self, key):
+
+        stay = self.searchList(key)
+        go = self.searchNext(key)
+
+        stay.next = go.next
