@@ -51,9 +51,16 @@ class LinkedList:
             if(x.node == key):
                 return x.next
 
+    def searchPrevious(self,key):
+
+        for x in self:
+            if(x.next.node == key):
+                return x 
+
+    # not working at the moment
     def deleteNode(self, key):
 
-        stay = self.searchList(key)
-        go = self.searchNext(key)
+        self.current = self.searchPrevious(key)
 
-        stay.next = go.next
+        if (self.current.next is not None):
+            self.current.next = self.current.next.next
