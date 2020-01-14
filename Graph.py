@@ -23,7 +23,7 @@ class Graph:
         self.graph.printList()
 
     def getPoint(self):
-        return self.graph.getNode()
+        return self.graph.getNode().node
 
 myGraph = Graph(0,1)
 myGraph.addPoint(1,1)
