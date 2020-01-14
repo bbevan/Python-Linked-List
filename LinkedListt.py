@@ -7,10 +7,6 @@ class Node:
     def __str__(self):
         return "" + str(self.node)
 
-class Tail():
-    pass
-
-
 class LinkedList:
 
     def __init__(self, value):
@@ -34,7 +30,4 @@ class LinkedList:
         else:
             self.i = self.first
             raise StopIteration
-        
-        
-            
         

@@ -18,13 +18,3 @@ class Graph:
 
     def addPoint(self, node, connection):
         self.graph.addNode(GraphNode(node, connection))
-
-    def printGraph(self):
-        self.graph.printList()
-
-    def getPoint(self):
-        return self.graph.getNode().node
-
-myGraph = Graph(0,1)
-myGraph.addPoint(1,1)
-myGraph.printGraph()
