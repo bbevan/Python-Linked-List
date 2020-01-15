@@ -7,7 +7,7 @@ class MyGraphTest(unittest.TestCase):
         myGraph = Graph(1,1)
 
     def test_init(self):
-        self.assertIsInstance(myGraph, Graph)
+        self.assertIsInstance(self.myGraph, Graph)
 
     # (!) forgot to add a getPoint() method
     # (2) added the method, doesn't seem to work
